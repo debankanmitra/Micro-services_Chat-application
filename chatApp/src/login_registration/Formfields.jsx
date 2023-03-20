@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' // need to make the texts responsive
 
 function Formfields(props) {
 

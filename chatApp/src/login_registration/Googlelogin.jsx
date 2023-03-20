@@ -1,5 +1,5 @@
 import React from 'react'      // Need more efficient code
-import styled from 'styled-components'
+import styled from 'styled-components' 
 
 
 const Button = styled.button `
@@ -12,11 +12,11 @@ font-size: 15px;
 color:#000000;
 background: #FFFFFF;
 border-radius: 37px;
-border: 1px solid #060000;
+border: 1px solid #E5D4D4;
 display: inline-block;
 `;
 
-const Image = styled.img `
+const Image = styled.img `   // Need to make this part responsive
 position:absolute;
 width: 25px;
 height: 25px;

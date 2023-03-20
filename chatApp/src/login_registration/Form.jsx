@@ -5,10 +5,10 @@ import Googlelogin from './Googlelogin';
 
 const FRorm = styled.form `
 width:30%;
-position: absolute;
-left:10%;
-top:10%;
-border: 1px solid black;
+position: absolute; // removing the positioin causing problem but it should not
+/* left:10%;
+top:10%; 
+border: 1px solid black; */
 `
 const Button = styled.button `
 position: relative;
@@ -20,6 +20,7 @@ font-size: 15px;
 color:#FFFFFF;
 background: #553CFB;
 border-radius: 37px;
+border: 1px solid #553CFB;
 margin-bottom: 5%;
 `
 
