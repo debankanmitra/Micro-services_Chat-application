@@ -1,18 +1,16 @@
-// import { useState } from 'react'
- import Form from './login_registration/Form'
+import { useState } from 'react'
+ import Registrationpage from './login_registration/Registrationpage'
 
 function App() {
 
 
   return (
     
-       <Form />
+       <Registrationpage />
     
     
   )
 }
 
 export default App
-
-
 
