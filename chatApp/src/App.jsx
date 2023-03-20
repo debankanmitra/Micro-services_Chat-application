@@ -1,11 +1,11 @@
 import { useState } from 'react'
- import Registrationpage from './login_registration/Registrationpage'
+ import Form from './login_registration/Form.jsx'
 
 function App() {
 
 
   return (
-       <Registrationpage />
+       <Form />
 
   )
 }

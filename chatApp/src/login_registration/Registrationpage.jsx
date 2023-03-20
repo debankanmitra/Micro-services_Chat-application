@@ -46,7 +46,6 @@ function Registrationpage() {
         <Div>
             <Div1>
                 {/* <Form /> */}
-                guguigu
             </Div1>
             <Div2>
                 <Circles width='13%' height='13%' color='#EEEEFD' top='' right='' bottom='5%' left='29%'/>
