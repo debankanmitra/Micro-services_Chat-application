@@ -3,42 +3,48 @@ import styled from 'styled-components'
 import Formfields from './Formfields';
 import Googlelogin from './Googlelogin';
 
-const Div = styled.div `
-width:50%;
-position: relative;
+const FRorm = styled.form `
+width:30%;
+position: absolute;
 left:10%;
+top:10%;
 border: 1px solid black;
 `
 const Button = styled.button `
-width: 243px;
+position: relative;
+left: 16%;
+width: 65%;
 height: 38px;
 font-weight: 600;
 font-size: 15px;
 color:#FFFFFF;
 background: #553CFB;
 border-radius: 37px;
-margin-bottom: 30px;
-`;
+margin-bottom: 5%;
+`
 
-
-let Login = () => {
+// const Fullform = styled.form`
+//     display: flex;
+//     flex-direction:column;
+//     gap:1.8rem;
+// `
+;
+let Form = () => {
    
     return (
-        <Div className='registration-form'>
-
-            <form action="/">
-                <Formfields for='fname' name='Name' type='text' hide=''/><br/>
-                <Formfields for="email" name='Email' type='email' hide='none'/><br/>
-                <Formfields for="password" name='Password' type='password' hide='none'/><br/>
-                <Button type="submit" className='sgnup'>
-                    SIGNUP
-                </Button>
-                <br/>
+        // <Div className='registration-form'>
+<>
+            <FRorm action="/">
+                <Formfields for='fname' name='Name' type='text' hide=''/>
+                <Formfields for="email" name='Email' type='email' hide='none'/>
+                <Formfields for="password" name='Password' type='password' hide='none'/>
+                <Button type="submit" className='sgnup'> SIGNUP </Button>
                 <Googlelogin/>
-            </form>
-
-        </Div>
+            </FRorm>
+            
+            </>
+        // </Div>
     )
 }
 
-export default Login
+export default Form

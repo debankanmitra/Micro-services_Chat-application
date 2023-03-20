@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react'      // Need more efficient code
 import styled from 'styled-components'
-//import Googlelogo from '/google.svg'
+
 
 const Button = styled.button `
-width: 243px;
+position: relative;
+left: 16%;
+width: 65%;
 height: 38px;
 font-weight: 600;
 font-size: 15px;
 color:#000000;
 background: #FFFFFF;
 border-radius: 37px;
-border: 1px solid #E6D4D4;
+border: 1px solid #060000;
 display: inline-block;
 `;
 
