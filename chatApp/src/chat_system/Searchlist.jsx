@@ -19,15 +19,24 @@ const Input = styled.input `
     bottom: 0;
     background: #EFF3F6;
     ::placeholder {
-        color: #BBBEC9;
-        
+        color: #BBBEC9;     
   }
+`
+
+const Img = styled.img`
+    position: relative;
+    top:10px;
+    z-index: 1;
+    width: 5%;
+    margin-left: 60%;
+   
 `
 function Searchlist() {
     return (
 
         <Div>
-            <Input type="text" placeholder="Search"></Input>
+            <Input type="text" placeholder="Search"/>
+            <Img src="./src/assets/Magnifier.svg" alt="" />
         </Div>
 
     )
