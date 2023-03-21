@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Div = styled.div `
+const Div = styled.div`
     border: 2px solid red;
     position: relative;
     display: flex;
     justify-content: center;
     grid-row: 2/3;
 `
-const Input = styled.input `
+const Input = styled.input`
     position: absolute;
     width: 80%;
     height: 40px;
@@ -23,20 +23,18 @@ const Input = styled.input `
   }
 `
 
-const Img = styled.img`
+const Svg = styled.svg`
     position: relative;
-    top:10px;
-    z-index: 1;
-    width: 5%;
-    margin-left: 60%;
-   
+    top:28px;
+    margin-left: 60%; 
 `
 function Searchlist() {
     return (
 
         <Div>
-            <Input type="text" placeholder="Search"/>
-            <Img src="./src/assets/Magnifier.svg" alt="" />
+            <Input type="text" placeholder="Search" />
+            <Svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 20 20"><path fill="#C1C7CE" fillRule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 
+11a5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clipRule="evenodd" /></Svg>
         </Div>
 
     )
