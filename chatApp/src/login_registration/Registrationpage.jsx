@@ -9,33 +9,24 @@ const Div = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #F5F4F4;
-  /* box-sizing: border-box; */
 `
 const Div1 = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-/* border: 1px solid blue; */
 `
 const Div2 = styled.div`
-/* width: 50vw;
-height: 100vh; */
 overflow: hidden;
 position:relative;
 display: flex;
 justify-content: center;
 align-items: center;
 background: #FCE0D4;
-/* border: 1px solid green; */
 
 `
 const Img = styled.img`
-/*  position:relative; */
     width: 80%;
     height: 90%;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 `
     ;
 
