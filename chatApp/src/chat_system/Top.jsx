@@ -7,15 +7,16 @@ const Div = styled.div`
     border: 2px solid black;
     grid-row: 1/2;
     display: flex;
-    position: absolute;
     margin: 0;
 `
-
+const H = styled.div`
+    /* position: absolute; */
+`
 function Top() {
   return (
     <Div>
         <Usericon/>
-        <h4>Messages</h4>
+        <H>Messages</H>
         <Videocall/>
     </Div>
   )
