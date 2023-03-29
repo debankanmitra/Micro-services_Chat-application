@@ -3,16 +3,14 @@ import styled from 'styled-components'
 import Conversation from './Conversations'
 import Searchlist from './Searchlist'
 import Messagescreen from './Messagescreen'
+import Top from './Top'
 
 const Div = styled.body`
     display: grid;
     grid-template-columns: 1.1fr 2fr;
     grid-template-rows: repeat(2,1fr) 8fr;
 `
-const Top = styled.div`
-    border: 2px solid black;
-    grid-row: 1/2;
-`
+
 const Writemessage = styled.div `
     border: 2px solid green;
     grid-row: 7/8;
@@ -25,9 +23,9 @@ const Usertop = styled.div `
 function Layoutgrid() {
   return (
     <Div>
-        <Top>top</Top>
+        <Top/>
         <Usertop>usertop</Usertop>
-        <Searchlist/>
+        <Searchlist/> 
         <Messagescreen/>
         {/* <Conversations><Conversation/></Conversations> */}
         <Conversation/>
