@@ -34,8 +34,8 @@ function Usertop() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"><path fill="#0079FF"
                     d="M8 12h22c2.2 0 4 1.8 4 4v16c0 2.2-1.8 4-4 4H8c-2.2 0-4-1.8-4-4V16c0-2.2 1.8-4 4-4z" /><path fill="#0079FF" d="m44 35l-10-6V19l10-6z" /></svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="#0079FF"><path stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" d="M8 12h.009m3.995 0h.01m3.977 0H16" /><circle cx="12" cy="12" r="10" stroke-width="1.5" /></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="#0079FF"><path strokeLinecap="round"
+                    strokeLinejoin="round" strokeWidth="2" d="M8 12h.009m3.995 0h.01m3.977 0H16" /><circle cx="12" cy="12" r="10" strokeWidth="1.5" /></g></svg>
             </Div2>
         </Div>
     )
