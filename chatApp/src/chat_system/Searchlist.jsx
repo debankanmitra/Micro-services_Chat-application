@@ -25,7 +25,7 @@ const Input = styled.input`
 
 const Svg = styled.svg`
     position: relative;
-    top:28px;
+    top:20px;
     margin-left: 60%; 
 `
 function Searchlist() {

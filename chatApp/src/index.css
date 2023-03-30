@@ -11,9 +11,9 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+    /* font-synthesis: none; */
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }

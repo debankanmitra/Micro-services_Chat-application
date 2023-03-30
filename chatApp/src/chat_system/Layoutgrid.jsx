@@ -4,6 +4,7 @@ import Conversation from './Conversations'
 import Searchlist from './Searchlist'
 import Messagescreen from './Messagescreen'
 import Top from './Top'
+import Usertop from './Usertop'
 
 const Div = styled.body`
     display: grid;
@@ -16,15 +17,11 @@ const Writemessage = styled.div `
     grid-row: 7/8;
     height: 10vh;
 `
-const Usertop = styled.div `
-    border: 2px solid violet;
-    grid-row: 1/2;
-`
 function Layoutgrid() {
   return (
     <Div>
         <Top/>
-        <Usertop>usertop</Usertop>
+        <Usertop/>
         <Searchlist/> 
         <Messagescreen/>
         {/* <Conversations><Conversation/></Conversations> */}

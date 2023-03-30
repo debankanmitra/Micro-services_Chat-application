@@ -13,7 +13,7 @@ const Div = styled.div`
 `
 const H = styled.div`
     font-size: 1.5em;
-    font-weight:900;
+    font-weight:700;
 
 `
 function Top() {
