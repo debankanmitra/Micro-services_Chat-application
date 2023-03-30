@@ -7,10 +7,14 @@ const Div = styled.div`
     border: 2px solid black;
     grid-row: 1/2;
     display: flex;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 25%;
 `
 const H = styled.div`
-    /* position: absolute; */
+    font-size: 1.5em;
+    font-weight:900;
+
 `
 function Top() {
   return (
