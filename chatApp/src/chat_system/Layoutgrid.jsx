@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import Conversation from './Conversations'
 import Searchlist from './Searchlist'
 import Messagescreen from './Messagescreen'
-import Top from './Top'
-import Usertop from './Usertop'
+import Top from '../Top/Top.jsx'
+import Usertop from '../Usertop/Usertop'
+import Writemessage from './Writemessage'
 
 const Div = styled.body`
     display: grid;
@@ -12,11 +13,6 @@ const Div = styled.body`
     grid-template-rows: repeat(2,1fr) 8fr;
 `
 
-const Writemessage = styled.div `
-    border: 2px solid green;
-    grid-row: 7/8;
-    height: 10vh;
-`
 function Layoutgrid() {
   return (
     <Div>
@@ -26,7 +22,7 @@ function Layoutgrid() {
         <Messagescreen/>
         {/* <Conversations><Conversation/></Conversations> */}
         <Conversation/>
-        <Writemessage>writemesssage</Writemessage>
+        <Writemessage/>
 
     </Div>
   )
