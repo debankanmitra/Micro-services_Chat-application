@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Div = styled.div`
-    border: 2px solid red;
+    /* border: 2px solid red; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@ const Div = styled.div`
 `
 const Input = styled.input`
     position: absolute;
-    width: 80%;
+    width: 84%;
     height: 40px;
     font-size: medium;
     padding-left: 20px;
@@ -21,15 +21,15 @@ const Input = styled.input`
     ::placeholder {
         color: #BBBEC9;     
   }
-  :focus{
+    :focus{
     outline: none;
 }
 `
 
-const Svg = styled.svg`
+const Svg = styled.svg`    // not efficient way try with write message technique
     position: relative;
-    top:20px;
-    margin-left: 60%; 
+    top:22px;
+    margin-left: 65%; 
 `
 function Searchlist() {
     return (

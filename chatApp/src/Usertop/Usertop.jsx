@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Usertop_user from './Usertop_user'
 
 const Div = styled.div`
-    border: 2px solid violet;
+    /* border: 2px solid violet; */
     grid-row: 1/2;
     display: flex;
     align-items: center;

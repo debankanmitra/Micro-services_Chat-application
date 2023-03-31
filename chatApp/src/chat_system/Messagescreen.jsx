@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Div = styled.div `
     border: 2px solid #EDF0F6;
     grid-row: 2/7;
-    margin: 10px;
+    margin: 5px 20px 10px 20px;
     padding: 2%;
     border-radius: 35px;
     background: #EDF0F6;

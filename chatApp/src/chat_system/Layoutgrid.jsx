@@ -5,7 +5,7 @@ import Searchlist from './Searchlist'
 import Messagescreen from './Messagescreen'
 import Top from '../Top/Top.jsx'
 import Usertop from '../Usertop/Usertop'
-import Writemessage from './Writemessage'
+import Writemessage from '../Writemessage/Writemessage'
 
 const Div = styled.body`
     display: grid;
