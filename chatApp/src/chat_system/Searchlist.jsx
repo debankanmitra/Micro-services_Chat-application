@@ -15,12 +15,15 @@ const Input = styled.input`
     font-size: medium;
     padding-left: 20px;
     border: 1px solid #EFF3F6;
-    border-radius: 26px;
+    border-radius: 17px;
     bottom: 0;
     background: #EFF3F6;
     ::placeholder {
         color: #BBBEC9;     
   }
+  :focus{
+    outline: none;
+}
 `
 
 const Svg = styled.svg`
