@@ -12,30 +12,59 @@ const Div = styled.div`
 const Div1 = styled.div`
     width: 6%;
     height: 40px;
-    border: 1px solid #dd0baf;
+    display: grid;
+    place-items: center;
+    border-radius: 17px 0 0 17px;
+    background: #EFF3F6;
+    border-style:solid none solid solid;
+    border-color:#BBBEC9;
+    border-width:1px;
 `
 const Div2 = styled.div`
     position: relative;
     width: 60%;
     height: 40px;
-    border: 1px solid #dd0baf;
+    background: #EFF3F6;
+    border-style:solid none solid none;
+    border-color:#BBBEC9;
+    border-width:1px;
     
 `
 const Input = styled.input`
     position: relative;
     width: 98.5%;
     height: 35px;
+    background: #EFF3F6;
+    border: 1px solid #EFF3F6;
+    ::placeholder {
+        color: #BBBEC9;    
+        font-size: medium; 
+  }
+  :focus{
+    outline: none;
+}
 `
 const Div3 = styled.div`
     width: 6%;
     height: 40px;
-    border: 1px solid #dd0baf;
+    display: grid;
+    place-items: center;
+    background: #EFF3F6;
+    border-style:solid none solid none;
+    border-color:#BBBEC9;
+    border-width:1px;
     
 `
 const Div4 = styled.div`
     width: 6%;
     height: 40px;
-    border: 1px solid #dd0baf;
+    display: grid;
+    place-items: center;
+    border-radius: 0 17px 17px 0;
+    background: #EFF3F6;
+    border-style:solid solid solid none;
+    border-color:#BBBEC9;
+    border-width:1px;
     
 `
 function Writemessage() {
@@ -48,7 +77,7 @@ function Writemessage() {
             7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </Div1>
             <Div2>
-            <Input type="text" placeholder="Write Messages" />
+                <Input type="text" placeholder="Write Messages" />
             </Div2>
             <Div3>
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16"><path fill="#0079FF"
