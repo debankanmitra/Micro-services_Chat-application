@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Emoji } from '../Writemessage/Emoji'
 
 const Div = styled.div `
     /* border: 2px solid blue; */
@@ -9,7 +10,9 @@ const Div = styled.div `
 
 function Conversation() {
   return (
-    <Div>here are the Conversations</Div>
+    <Div>here are the Conversations
+      <Emoji/>
+    </Div>
   )
 }
 
