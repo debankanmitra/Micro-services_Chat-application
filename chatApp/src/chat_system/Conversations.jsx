@@ -11,7 +11,7 @@ const Div = styled.div `
 function Conversation() {
   return (
     <Div>here are the Conversations
-      <Emoji/>
+      
     </Div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Emojiicon from './Emoji'
+import { Emoji } from './Emoji'
 
 const Div = styled.div`
     /* border: 2px solid green; */
@@ -60,10 +61,12 @@ const Div4 = styled.div`
 `
 function Writemessage() {
     return (
+        
         <Div>
+            <Emoji/>
 
-            <Emojiicon/>
-            
+            <Emojiicon />
+
             <Div2>
                 <Input type="text" placeholder="Write Messages" />
             </Div2>
