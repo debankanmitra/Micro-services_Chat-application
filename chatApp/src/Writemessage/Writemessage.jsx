@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styled from 'styled-components'
 import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
@@ -60,13 +60,19 @@ const Div4 = styled.div`
     
 `
 function Writemessage() {
+    const [display, setDisplay] = useState('none');
+
+  const handleClick = () => {
+    setDisplay('block');
+  };
     return (
         
-        <Div>
-            <Emoji/>
-
-            <Emojiicon />
-
+        <Div>           
+            <div onClick={handleClick}>
+            <Emojiicon  />
+            </div>
+            
+            <Emoji display={display}/> 
             <Div2>
                 <Input type="text" placeholder="Write Messages" />
             </Div2>

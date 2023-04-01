@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 
 const Div1 = styled.div `
@@ -30,6 +30,7 @@ function Emojiicon() {
 }
 
 const Emo = styled.div `
+    display:  ${props => props.display};
     position: fixed;
     bottom: 10%;
     left: 33%;
@@ -50,9 +51,10 @@ const Emo = styled.div `
         cursor: pointer;
     }
 `
-function Emoji() {
+function Emoji(props) {
+    
     return (
-        <Emo className='emoji'>
+        <Emo display={props.display} className='emoji'>
             <span>&#128512;</span>
             <span>&#128513;</span>
             <span>&#128514;</span>
