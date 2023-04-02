@@ -61,17 +61,17 @@ const Div4 = styled.div`
 `
 function Writemessage() {
     const [display, setDisplay] = useState('none');
+    const [count, setCount] = useState(0);
 
   const handleClick = () => {
-    setDisplay('block');
+    setCount(count + 1);
+    if (count%2==0) setDisplay('block');
+    else setDisplay('none');
   };
     return (
         
         <Div>           
-            {/* <div onClick={handleClick}> */}
             <Emojiicon onClick={handleClick} />
-            {/* </div> */}
-            
             <Emoji display={display}/> 
             <Div2>
                 <Input type="text" placeholder="Write Messages" />

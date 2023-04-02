@@ -1,6 +1,6 @@
 :root {
-    font-family: 'Inter';
-    /* margin: 0;
+  font-family: 'Inter';
+  /* margin: 0;
   padding: 0;
   line-height: 1.5;
   
@@ -11,18 +11,26 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
 
-    /* font-synthesis: none; */
-    text-rendering: geometricPrecision;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  /* font-synthesis: none; */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
+
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
+
 /* a {
   
   color: #646cff;

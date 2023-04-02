@@ -29,6 +29,12 @@ function Emojiicon(props) {
     )
 }
 
+
+
+
+
+
+
 const Emo = styled.div `
     display:  ${props => props.display};
     position: fixed;
