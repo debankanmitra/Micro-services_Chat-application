@@ -7,7 +7,9 @@ import Top from '../Top/Top.jsx'
 import Usertop from '../Usertop/Usertop'
 import Writemessage from '../Writemessage/Writemessage'
 
-const Div = styled.body`
+const Div = styled.div`
+    /* width: 100%; */
+    height: 100vh;
     display: grid;
     grid-template-columns: 1.1fr 2fr;
     grid-template-rows: repeat(2,1fr) 8fr;
@@ -16,13 +18,12 @@ const Div = styled.body`
 function Layoutgrid() {
   return (
     <Div>
-        <Top/>
-        <Usertop/>
-        <Searchlist/> 
-        <Messagescreen/>
-        {/* <Conversations><Conversation/></Conversations> */}
-        <Conversation/>
-        <Writemessage/>
+      <Top />
+      <Usertop />
+      <Searchlist />
+      <Messagescreen />
+      <Conversation />
+      <Writemessage />
 
     </Div>
   )

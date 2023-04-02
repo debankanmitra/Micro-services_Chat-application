@@ -1,10 +1,10 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
 
+
 const Div = styled.div`
-    /* border: 2px solid green; */
     grid-row: 7/8;
     height: 10vh;
     display: flex;
@@ -63,19 +63,20 @@ function Writemessage() {
     const [display, setDisplay] = useState('none');
     const [count, setCount] = useState(0);
 
-  const handleClick = () => {
-    setCount(count + 1);
-    if (count%2==0) setDisplay('block');
-    else setDisplay('none');
-  };
+    const handleClick = () => {
+        setCount(count + 1);
+        if (count % 2 == 0) setDisplay('block');
+        else setDisplay('none');
+    };
     return (
-        
-        <Div>           
+        <Div>
+            {/* we can also directly: () => setDisplay('block') */}
             <Emojiicon onClick={handleClick} />
-            <Emoji display={display}/> 
+            <Emoji display={display} />
             <Div2>
                 <Input type="text" placeholder="Write Messages" />
             </Div2>
+
             <Div3>
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16"><path fill="#0079FF"
                     d="m3.258 8.707l4.596-4.596a2.5 2.5 0 0 1 3.536 3.536L6.086 12.95a1 1 0 0 1-1.414-1.414l5.303-5.304a.5.5 0 0 0-.707-.707L3.965 10.83a2 2 0 1 0 
