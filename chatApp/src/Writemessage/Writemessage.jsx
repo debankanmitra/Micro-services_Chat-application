@@ -68,9 +68,9 @@ function Writemessage() {
     return (
         
         <Div>           
-            <div onClick={handleClick}>
-            <Emojiicon  />
-            </div>
+            {/* <div onClick={handleClick}> */}
+            <Emojiicon onClick={handleClick} />
+            {/* </div> */}
             
             <Emoji display={display}/> 
             <Div2>

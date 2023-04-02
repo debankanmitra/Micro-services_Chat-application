@@ -13,9 +13,9 @@ const Div1 = styled.div `
     border-width:1px;
 `
 
-function Emojiicon() {
+function Emojiicon(props) {
     return (
-        <Div1>
+        <Div1 onClick={props.onClick}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
