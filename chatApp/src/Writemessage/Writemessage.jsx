@@ -62,19 +62,25 @@ const Div4 = styled.div`
 function Writemessage() {
     const [display, setDisplay] = useState('none');
     const [count, setCount] = useState(0);
+    const [value,setvalue] = useState('');
 
     const handleClick = () => {
         setCount(count + 1);
         if (count % 2 == 0) setDisplay('block');
         else setDisplay('none');
     };
+
+    const addemojitotext=(e)=>{
+        setvalue(value+e.target.textContent);
+    }
+
     return (
         <Div>
-            {/* we can also directly: () => setDisplay('block') */}
+            {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
             <Emojiicon onClick={handleClick} />
-            <Emoji display={display} />
+            <Emoji display={display} onClick={addemojitotext}/>
             <Div2>
-                <Input type="text" placeholder="Write Messages" />
+                <Input type="text" placeholder="Write Messages" value={value}  onChange={(e) => {setvalue(e.target.value)}}/>
             </Div2>
 
             <Div3>
