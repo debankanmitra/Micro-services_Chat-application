@@ -10,6 +10,7 @@ const Div = styled.div`
     align-items: center;
     justify-content: center;
     gap: 22%;
+    background: yellow;
 `
 const H = styled.div`
     font-size: 1.5em;

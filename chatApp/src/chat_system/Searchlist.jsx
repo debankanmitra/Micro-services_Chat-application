@@ -7,6 +7,7 @@ const Div = styled.div`
     display: flex;
     justify-content: center;
     grid-row: 2/3;
+    background: yellow;
 `
 const Input = styled.input`
     position: absolute;
