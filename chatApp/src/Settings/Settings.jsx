@@ -7,6 +7,7 @@ import Theme from './Theme'
 import Notifications from './Notifications'
 import Shareprofile from './Shareprofile'
 import Logout from './Logout'
+import Addpeople from './Addpeople'
 
 
 
@@ -30,7 +31,7 @@ function Settings(props) {
       <Notifications/>
       <Shareprofile/>
       <Logout/>
-
+      <Addpeople/>
     </Div>
   )
 }
