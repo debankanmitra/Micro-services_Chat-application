@@ -7,11 +7,12 @@ const Div = styled.div `
     grid-row: 3/8;
     padding: 2rem;
     background: yellow;
+    display:  ${props => props.disp ? "" : 'none'};
 `
 
-function Conversation() {
+function Conversation(props) {
   return (
-    <Div>here are the Conversations
+    <Div disp={props.disp}>here are the Conversations
       
     </Div>
   )

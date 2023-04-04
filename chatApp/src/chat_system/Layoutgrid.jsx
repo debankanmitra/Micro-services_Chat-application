@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import Conversation from './Conversations'
 import Searchlist from './Searchlist'
@@ -7,6 +7,7 @@ import Top from '../Top/Top.jsx'
 import Usertop from '../Usertop/Usertop'
 import Writemessage from '../Writemessage/Writemessage'
 import Settings from '../Settings/Settings'
+
 
 const Div = styled.div`
     /* width: 100%; */
@@ -17,14 +18,16 @@ const Div = styled.div`
 `
 
 function Layoutgrid() {
+  const [disp, setDisplay] = useState(false);
+  
   return (
     <Div>
       {/* <Settings/> */}
-      <Top />
+      <Top setDisplay={()=>{setDisplay(!disp)}}/>
       <Usertop />
       <Searchlist />
       <Messagescreen />
-      <Conversation />
+      <Conversation disp={disp} />
       <Writemessage />
 
     </Div>

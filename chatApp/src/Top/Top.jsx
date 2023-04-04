@@ -17,10 +17,10 @@ const H = styled.div`
     font-weight:700;
 
 `
-function Top() {
+function Top(props) {
   return (
     <Div>
-        <Usericon/>
+        <Usericon setDisplay={props.setDisplay}/>
         <H>Messages</H>
         <Videocall/>
     </Div>
