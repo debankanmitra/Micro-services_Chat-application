@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Close from './Close'
 import Profilepic from './Profilepic'
 import Profile from './Profile'
+import Theme from './Theme'
 
 
 
@@ -22,6 +23,7 @@ function Settings(props) {
       <Close />
       <Profilepic/>
       <Profile/>
+      <Theme/>
 
     </Div>
   )
