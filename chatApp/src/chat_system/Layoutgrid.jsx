@@ -18,14 +18,14 @@ const Div = styled.div`
 `
 
 function Layoutgrid() {
-  const [disp, setDisplay] = useState(false);
+  const [disp, setDisplay] = useState(true);
   
   return (
     <Div>
-      {/* <Settings/> */}
-      <Top setDisplay={()=>{setDisplay(!disp)}}/>
+      <Settings disp={!disp} setDisplay={()=>{setDisplay(!disp)}}/>
+      <Top setDisplay={()=>{setDisplay(!disp)}} disp={disp}/>
       <Usertop />
-      <Searchlist />
+      <Searchlist disp={disp} />
       <Messagescreen />
       <Conversation disp={disp} />
       <Writemessage />

@@ -4,11 +4,12 @@ import styled from 'styled-components'
 const Div = styled.div`
   background: yellow;
   grid-row: 1/8;
+  display:  ${props => props.disp ? "" : 'none'};
 `
 
-function Settings() {
+function Settings(props) {
   return (
-    <Div>Settings</Div>
+    <Div disp={props.disp} onClick={props.setDisplay}>Settings</Div>
   )
 }
 
