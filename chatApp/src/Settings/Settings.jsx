@@ -6,6 +6,7 @@ import Profile from './Profile'
 import Theme from './Theme'
 import Notifications from './Notifications'
 import Shareprofile from './Shareprofile'
+import Logout from './Logout'
 
 
 
@@ -28,6 +29,7 @@ function Settings(props) {
       <Theme/>
       <Notifications/>
       <Shareprofile/>
+      <Logout/>
 
     </Div>
   )
