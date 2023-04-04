@@ -4,6 +4,7 @@ import Close from './Close'
 import Profilepic from './Profilepic'
 import Profile from './Profile'
 import Theme from './Theme'
+import Notifications from './Notifications'
 
 
 
@@ -24,6 +25,7 @@ function Settings(props) {
       <Profilepic/>
       <Profile/>
       <Theme/>
+      <Notifications/>
 
     </Div>
   )
