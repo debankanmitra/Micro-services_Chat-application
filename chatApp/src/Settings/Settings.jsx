@@ -5,6 +5,7 @@ import Profilepic from './Profilepic'
 import Profile from './Profile'
 import Theme from './Theme'
 import Notifications from './Notifications'
+import Shareprofile from './Shareprofile'
 
 
 
@@ -26,6 +27,7 @@ function Settings(props) {
       <Profile/>
       <Theme/>
       <Notifications/>
+      <Shareprofile/>
 
     </Div>
   )
