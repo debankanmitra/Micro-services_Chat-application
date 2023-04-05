@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const Div = styled.div`
     width: 99%;
-    border:1px solid red;
     display: grid;
     place-items: center;
 `;
@@ -11,7 +10,6 @@ const Div = styled.div`
 const Div1 = styled.div`
     width: 150px;
     height: 150px;
-    border:1px solid red;
     border-radius: 75px;
     margin-top: 10px;
     background-image: url("orange.jpg");

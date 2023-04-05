@@ -1,9 +1,12 @@
 .wrapper {
     width: 100%;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     position: relative;
+    /* padding: 8px 0px 8px 0px; */
+}
+.wrapper:hover{
+    background: #C1C7CE;
 }
 
 h2 {

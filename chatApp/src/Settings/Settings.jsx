@@ -12,19 +12,19 @@ import Addpeople from './Addpeople'
 
 
 const Div = styled.div`
-width:500px;
-height:100vh;
-  background: yellow;
-  /* display: grid;
-  place-items: center; */
-  /* grid-row: 1/8;
-  display:  ${props => props.disp ? "" : 'none'}; */
+  border-right: 1px solid #E9E9E9;
+  border-radius: 0px 40px 40px 0px;
+  display: grid;
+  place-items: center;
+  background: #ECE2E3;
+  grid-row: 1/8;
+  display:  ${props => props.disp ? "" : 'none'};
 `
 
 function Settings(props) {
   return (
-    <Div disp={props.disp} onClick={props.setDisplay}>
-      <Close />
+    <Div disp={props.disp}>
+      <Close setDisplay={props.setDisplay}/>
       <Profilepic/>
       <Profile/>
       <Theme/>

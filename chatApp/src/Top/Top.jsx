@@ -8,9 +8,8 @@ const Div = styled.div`
     grid-row: 1/2;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 22%;
-    background: yellow;
+    justify-content: space-evenly;
+    gap: 12%;
     display:  ${props => props.disp ? "" : 'none'};
 `
 const H = styled.div`

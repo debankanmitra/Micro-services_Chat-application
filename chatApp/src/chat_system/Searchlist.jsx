@@ -7,7 +7,6 @@ const Div = styled.div`
     display: flex;
     justify-content: center;
     grid-row: 2/3;
-    background: yellow;
     display:  ${props => props.disp ? "" : 'none'};
 `
 const Input = styled.input`
