@@ -10,7 +10,6 @@ import Logout from './Logout'
 import Addpeople from './Addpeople'
 
 
-
 const Div = styled.div`
   z-index: 9;
   width: 30vw;
@@ -24,12 +23,8 @@ const Div = styled.div`
   /* grid-row: 1/8; */
   /* display:  ${props => props.disp ? "" : 'none'}; */
   transform: translateX(-100%);
-  transition: transform 500ms ease;
-  ${props =>
-    props.disp &&
-    `
-    transform: translateX(0%);
-  `}
+  transition: transform 0.3s ease;
+  ${props => props.disp && `transform: translateX(0%);`}
   
 `
 

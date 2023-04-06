@@ -10,7 +10,6 @@ const Div = styled.div`
     align-items: center;
     justify-content: space-evenly;
     gap: 12%;
-    //display:  ${props => props.disp ? "" : 'none'};
 `
 const H = styled.div`
     font-size: 1.5em;
@@ -19,7 +18,7 @@ const H = styled.div`
 `
 function Top(props) {
   return (
-    <Div disp={props.disp}>
+    <Div>
         <Usericon setDisplay={props.setDisplay}/>
         <H>Messages</H>
         <Videocall/>

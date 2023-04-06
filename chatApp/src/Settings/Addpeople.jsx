@@ -2,23 +2,6 @@ import React from "react";
 import './settings.css'
 
 
-// const Div = styled.div`
-//     width: 100%;
-//     border: 1px solid red;
-//     display: flex;
-//     align-items: center;
-//     position: relative;
-// `;
-// const Svg = styled.svg`
-//     margin-left: 13%;
-// `;
-// const H = styled.h2`
-//     font-size: 1em;
-//     font-weight:500;
-//     padding-left: 18%;
-//     position: relative;
-
-// `;
 
 function Addpeople() {
   return <div className="wrapper">
