@@ -10,6 +10,7 @@ const Div = styled.div`
     grid-row: 2/3;
 `
 const Input = styled.input`
+    color: ${props => props.val && 'white'};
     position: absolute;
     width: 84%;
     height: 40px;
@@ -29,7 +30,7 @@ const Input = styled.input`
 
 const Svg = styled.svg`    // not efficient way try with write message technique
     position: relative;
-    top:20px;
+    top:18px;
     margin-left: 65%; 
 `
 function Searchlist() {

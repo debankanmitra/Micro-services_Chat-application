@@ -15,7 +15,7 @@ const H = styled.h2`
 `
 const Svg = styled.svg`
     position: relative;
-    margin-left: 94px ;
+    margin-left: 78px ;
 `
 
 function Close({setDisplay}) {

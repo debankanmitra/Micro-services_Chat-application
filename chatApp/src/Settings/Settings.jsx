@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { ThemeContext } from '../App'
 import styled from 'styled-components'
 import Close from './Close'
 import Profilepic from './Profilepic'
@@ -15,11 +16,11 @@ const Div = styled.div`
   width: 30vw;
   height: 100vh;
   position: absolute;
-  border-right: 1px solid #E9E9E9;
+  border-right: 1px solid ${props =>props.val ? 'rgb(20 18 18)' :'#E9E9E9'};
   border-radius: 0px 40px 40px 0px;
   display: grid;
   place-items: center;
-  background: #ECE2E3;
+  background: ${props => props.val ? 'rgb(20 18 18)' : '#ECE2E3'};
   /* grid-row: 1/8; */
   /* display:  ${props => props.disp ? "" : 'none'}; */
   transform: translateX(-100%);
@@ -29,8 +30,9 @@ const Div = styled.div`
 `
 
 function Settings(props) {
+  const { Darkmode } = useContext(ThemeContext);
   return (
-    <Div disp={props.disp}>
+    <Div disp={props.disp} val={Darkmode}>
       <Close setDisplay={props.setDisplay}/>
       <Profilepic/>
       <Profile/>
