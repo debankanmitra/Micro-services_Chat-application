@@ -12,13 +12,25 @@ import Addpeople from './Addpeople'
 
 
 const Div = styled.div`
+  z-index: 9;
+  width: 30vw;
+  height: 100vh;
+  position: absolute;
   border-right: 1px solid #E9E9E9;
   border-radius: 0px 40px 40px 0px;
   display: grid;
   place-items: center;
   background: #ECE2E3;
-  grid-row: 1/8;
-  display:  ${props => props.disp ? "" : 'none'};
+  /* grid-row: 1/8; */
+  /* display:  ${props => props.disp ? "" : 'none'}; */
+  transform: translateX(-100%);
+  transition: transform 500ms ease;
+  ${props =>
+    props.disp &&
+    `
+    transform: translateX(0%);
+  `}
+  
 `
 
 function Settings(props) {

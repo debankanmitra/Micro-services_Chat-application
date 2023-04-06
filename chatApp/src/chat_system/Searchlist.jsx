@@ -7,7 +7,7 @@ const Div = styled.div`
     display: flex;
     justify-content: center;
     grid-row: 2/3;
-    display:  ${props => props.disp ? "" : 'none'};
+    /* display:  ${props => props.disp ? "" : 'none'}; */
 `
 const Input = styled.input`
     position: absolute;

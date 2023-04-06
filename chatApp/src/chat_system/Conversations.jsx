@@ -6,7 +6,7 @@ const Div = styled.div `
     /* border: 2px solid blue; */
     grid-row: 3/8;
     padding: 2rem;
-    display:  ${props => props.disp ? "" : 'none'};
+    /* display:  ${props => props.disp ? "" : 'none'}; */
 `
 
 function Conversation(props) {
