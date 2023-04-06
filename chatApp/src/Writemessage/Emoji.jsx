@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { ThemeContext } from '../App'
 import styled from 'styled-components'
 
 const Div1 = styled.div`
@@ -7,15 +8,16 @@ const Div1 = styled.div`
     display: grid;
     place-items: center;
     border-radius: 17px 0 0 17px;
-    background: #EFF3F6;
+    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
     border-style:solid none solid solid;
-    border-color:#BBBEC9;
+    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
 `
 
 function Emojiicon(props) {
+    const { Darkmode } = useContext(ThemeContext);
     return (
-        <Div1 onClick={props.onClick}>
+        <Div1 onClick={props.onClick} val={Darkmode}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"

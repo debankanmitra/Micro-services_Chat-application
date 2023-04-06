@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
+import { ThemeContext } from '../App'
 import styled from 'styled-components'
 import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
@@ -16,9 +17,9 @@ const Div2 = styled.div`
     position: relative;
     width: 60%;
     height: 40px;
-    background: #EFF3F6;
+    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
     border-style:solid none solid none;
-    border-color:#BBBEC9;
+    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
     
 `
@@ -26,10 +27,11 @@ const Input = styled.input`
     position: relative;
     width: 98.5%;
     height: 35px;
-    background: #EFF3F6;
-    border: 1px solid #EFF3F6;
+    color: ${props => props.val && 'white'};
+    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
+    border: 1px solid ${props =>props.val ? '#27292D' :'#EFF3F6'};
     ::placeholder {
-        color: #BBBEC9;    
+        color: ${props =>props.val ? '#45474B' :'#BBBEC9'};
         font-size: medium; 
   }
     :focus{
@@ -41,9 +43,9 @@ const Div3 = styled.div`
     height: 40px;
     display: grid;
     place-items: center;
-    background: #EFF3F6;
+    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
     border-style:solid none solid none;
-    border-color:#BBBEC9;
+    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
     
 `
@@ -53,13 +55,14 @@ const Div4 = styled.div`
     display: grid;
     place-items: center;
     border-radius: 0 17px 17px 0;
-    background: #EFF3F6;
+    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
     border-style:solid solid solid none;
-    border-color:#BBBEC9;
+    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
     
 `
 function Writemessage() {
+    const { Darkmode } = useContext(ThemeContext);
     const [display, setDisplay] = useState('none');
     const [count, setCount] = useState(0);
     const [value,setvalue] = useState('');
@@ -90,16 +93,16 @@ function Writemessage() {
             {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
             <Emojiicon onClick={handleClick} />
             <Emoji display={display} onClick={addemojitotext}/>
-            <Div2>
-                <Input type="text" placeholder="Write Messages" value={value}  onChange={inputchange}/>
+            <Div2 val={Darkmode}>
+                <Input type="text" placeholder="Write Messages" value={value}  onChange={inputchange} val={Darkmode}/>
             </Div2>
 
-            <Div3>
+            <Div3 val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16"><path fill="#0079FF"
                     d="m3.258 8.707l4.596-4.596a2.5 2.5 0 0 1 3.536 3.536L6.086 12.95a1 1 0 0 1-1.414-1.414l5.303-5.304a.5.5 0 0 0-.707-.707L3.965 10.83a2 2 0 1 0 
             2.828 2.828l5.304-5.303a3.5 3.5 0 0 0-4.95-4.95L2.55 8a.5.5 0 1 0 .707.707Z"/></svg>
             </Div3>
-            <Div4>
+            <Div4 val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox={view}><path fill="#0079FF"
                     d={path}/></svg>
             </Div4>
