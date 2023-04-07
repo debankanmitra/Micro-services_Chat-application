@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    /* padding: 8px 0px 8px 0px; */
+    z-index: 7;
 }
 .wrapper:hover{
     background: rgb(119 122 129 / 49%);

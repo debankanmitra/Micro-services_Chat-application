@@ -21,8 +21,6 @@ const Div = styled.div`
   display: grid;
   place-items: center;
   background: ${props => props.val ? 'rgb(38 36 36)' : '#ECE2E3'};
-  /* grid-row: 1/8; */
-  /* display:  ${props => props.disp ? "" : 'none'}; */
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   ${props => props.disp && `transform: translateX(0%);`}
