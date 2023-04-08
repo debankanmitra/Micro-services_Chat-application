@@ -8,7 +8,7 @@ import Theme from './Theme'
 import Notifications from './Notifications'
 import Shareprofile,{Sharediv} from './Shareprofile'
 import Logout from './Logout'
-import Addpeople from './Addpeople'
+import Addpeople , {Adddiv} from './Addpeople'
 
 
 const Div = styled.div`
@@ -43,7 +43,8 @@ function Settings(props) {
       <Shareprofile share={()=>setshare(!showshare)}/>
       <Sharediv show={showshare}/>
       <Logout/>
-      <Addpeople/>
+      <Addpeople share={()=>setshare(!showshare)}/>
+      <Adddiv show={showshare}/>
     </Div>
   )
 }
