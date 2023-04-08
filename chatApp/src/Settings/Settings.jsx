@@ -32,6 +32,7 @@ const Div = styled.div`
 
 function Settings(props) {
   const [showshare, setshare] = useState(false);
+  const [addpeople, setaddpeople] = useState(false);
   const { Darkmode } = useContext(ThemeContext);
   return (
     <Div disp={props.disp} val={Darkmode}>
@@ -43,8 +44,8 @@ function Settings(props) {
       <Shareprofile share={()=>setshare(!showshare)}/>
       <Sharediv show={showshare}/>
       <Logout/>
-      <Addpeople share={()=>setshare(!showshare)}/>
-      <Adddiv show={showshare}/>
+      <Addpeople share={()=>setaddpeople(!addpeople)}/>
+      <Adddiv show={addpeople}/>
     </Div>
   )
 }
