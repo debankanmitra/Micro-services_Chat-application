@@ -37,7 +37,7 @@ const Div = styled.div `
 `
 
 function Conversation() {
-  let items = people.map(p => <Person name={p.name} age={p.age}/>);
+  let items = people.map((prop, index) => <Person key={index} name={prop.name} age={prop.age}/>);
   return (
     <Div>
       {items}
