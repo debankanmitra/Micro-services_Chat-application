@@ -24,6 +24,7 @@ io.on("connection",Socket=> {
 
     Socket.on("send_message",(data)=>{
         io.emit("recieve_message",data);
+        //Socket.emit("recieve_message",data);
        // Socket.broadcast.emit("recieve_message",data);
     })
 })

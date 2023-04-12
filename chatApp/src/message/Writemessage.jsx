@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { ThemeContext } from '../App'
 import styled from 'styled-components'
 import Emojiicon from './Emoji'
@@ -20,9 +20,9 @@ const Div2 = styled.div`
     position: relative;
     width: 60%;
     height: 40px;
-    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
+    background: ${props => props.val ? '#27292D' : '#EFF3F6'};
     border-style:solid none solid none;
-    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
+    border-color:${props => props.val ? '#27292D' : '#BBBEC9'};
     border-width:1px;
 `
 const Input = styled.input`
@@ -30,10 +30,10 @@ const Input = styled.input`
     width: 98.5%;
     height: 35px;
     color: ${props => props.val && 'white'};
-    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
-    border: 1px solid ${props =>props.val ? '#27292D' :'#EFF3F6'};
+    background: ${props => props.val ? '#27292D' : '#EFF3F6'};
+    border: 1px solid ${props => props.val ? '#27292D' : '#EFF3F6'};
     ::placeholder {
-        color: ${props =>props.val ? '#45474B' :'#BBBEC9'};
+        color: ${props => props.val ? '#45474B' : '#BBBEC9'};
         font-size: medium; 
   }
     :focus{
@@ -45,9 +45,9 @@ const Div3 = styled.div`
     height: 40px;
     display: grid;
     place-items: center;
-    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
+    background: ${props => props.val ? '#27292D' : '#EFF3F6'};
     border-style:solid none solid none;
-    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
+    border-color:${props => props.val ? '#27292D' : '#BBBEC9'};
     border-width:1px;
 `
 const Div4 = styled.div`
@@ -56,9 +56,9 @@ const Div4 = styled.div`
     display: grid;
     place-items: center;
     border-radius: 0 17px 17px 0;
-    background: ${props =>props.val ? '#27292D' :'#EFF3F6'};
+    background: ${props => props.val ? '#27292D' : '#EFF3F6'};
     border-style:solid solid solid none;
-    border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
+    border-color:${props => props.val ? '#27292D' : '#BBBEC9'};
     border-width:1px;
 `
 // ----- style ---- 
@@ -66,9 +66,9 @@ function Writemessage() {
     const { Darkmode } = useContext(ThemeContext);
     const [display, setDisplay] = useState('none');
     const [count, setCount] = useState(0);
-    const [value,setvalue] = useState('');
-    const [view,setview] = useState("0 0 24 24");
-    const [path,setpath] = useState("M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3m7 9c0 3.53-2.61 6.44-6 6.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5 5 0 0 0 5 5a5 5 0 0 0 5-5h2Z");
+    const [value, setvalue] = useState('');
+    const [view, setview] = useState("0 0 24 24");
+    const [path, setpath] = useState("M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3m7 9c0 3.53-2.61 6.44-6 6.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5 5 0 0 0 5 5a5 5 0 0 0 5-5h2Z");
 
     const handleClick = () => {
         setCount(count + 1);  // in this function we can invoke the setccount function (like in pedro tech video 1:02:22 all hooks)using props in Emoji.jsx but not if else statement because the count variable is available only in this component 
@@ -76,8 +76,8 @@ function Writemessage() {
         else setDisplay('none');
     };
 
-    const addemojitotext=(e)=>{
-        setvalue(value+e.target.textContent); 
+    const addemojitotext = (e) => {
+        setvalue(value + e.target.textContent);
         setview("0 0 16 16")
         setpath("M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26l.001.002l4.995 3.178l3.178 4.995l.002.002l.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215l7.494-7.494l1.178-.471l-.47 1.178Z")
     }
@@ -86,23 +86,23 @@ function Writemessage() {
         setvalue(e.target.value)
         setview("0 0 16 16")
         setpath("M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26l.001.002l4.995 3.178l3.178 4.995l.002.002l.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215l7.494-7.494l1.178-.471l-.47 1.178Z")
-        
+
     }
 
     const sendmsg = () => {
-        if (value!= ""){
-        socket.emit("send_message",value);  // emitting to socket server
-        setvalue("")
+        if (value != "") {
+            socket.emit("send_message", value);  // emitting to socket server
+            setvalue("")
         }
     }
-     
+
     return (
         <Div>
             {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
             <Emojiicon onClick={handleClick} />
-            <Emoji display={display} onClick={addemojitotext}/>
+            <Emoji display={display} onClick={addemojitotext} />
             <Div2 val={Darkmode}>
-                <Input type="text" placeholder="Write Messages" value={value}  onChange={inputchange} val={Darkmode} onKeyDown={event=>event.key=='Enter'&& sendmsg()}/>
+                <Input type="text" placeholder="Write Messages" value={value} onChange={inputchange} val={Darkmode} onKeyDown={event => event.key == 'Enter' && sendmsg()} />
             </Div2>
 
             <Div3 val={Darkmode}>
@@ -112,7 +112,7 @@ function Writemessage() {
             </Div3>
             <Div4 val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox={view}><path fill="#0079FF"
-                    d={path} onClick={sendmsg}/></svg>
+                    d={path} onClick={sendmsg} /></svg>
             </Div4>
         </Div>
     )
