@@ -21,4 +21,8 @@ io.on("connection",Socket=> {
     Socket.on('disconnect',()=>{
         console.log("user disconnected",Socket.id);
     })
+
+    Socket.on("fromapp",(data)=>{
+        console.log("",data);
+    })
 })
