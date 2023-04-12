@@ -19,8 +19,6 @@ function Messagescreen() {
   });
   const { Darkmode } = useContext(ThemeContext);
 
-
-
   return (
     <Div val={Darkmode}>
       {messageList.map((message, index) => ( <h4 key={index}>{message}</h4> ))}

@@ -23,6 +23,30 @@ io.on("connection",Socket=> {
     })
 
     Socket.on("send_message",(data)=>{
-        Socket.broadcast.emit("recieve_message",data);
+        io.emit("recieve_message",data);
+       // Socket.broadcast.emit("recieve_message",data);
     })
 })
+
+
+
+
+
+
+
+
+
+
+// // Server-side code
+// io.on('connection', (socket) => {
+//     socket.on('message', (data) => {
+//       // Send the message to all connected clients
+//       io.emit('message', data);
+      
+//       // Send the message to all connected clients except the sender
+//       socket.broadcast.emit('message', data);
+      
+//       // Send the message only to the sender
+//       socket.emit('message', data);
+//     });
+//   });

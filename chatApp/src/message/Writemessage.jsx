@@ -95,14 +95,14 @@ function Writemessage() {
         setvalue("")
         }
     }
-
+     
     return (
         <Div>
             {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
             <Emojiicon onClick={handleClick} />
             <Emoji display={display} onClick={addemojitotext}/>
             <Div2 val={Darkmode}>
-                <Input type="text" placeholder="Write Messages" value={value}  onChange={inputchange} val={Darkmode}/>
+                <Input type="text" placeholder="Write Messages" value={value}  onChange={inputchange} val={Darkmode} onKeyDown={event=>event.key=='Enter'&& sendmsg()}/>
             </Div2>
 
             <Div3 val={Darkmode}>
