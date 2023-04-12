@@ -7,8 +7,8 @@ import io from 'socket.io-client'
 
 const socket = io.connect("http://localhost:8080")
 
-socket.emit("fromapp",'hello server')
 
+// ----- Style - -- 
 const Div = styled.div`
     grid-row: 7/8;
     height: 10vh;
@@ -16,7 +16,6 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
 `
-
 const Div2 = styled.div`
     position: relative;
     width: 60%;
@@ -25,7 +24,6 @@ const Div2 = styled.div`
     border-style:solid none solid none;
     border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
-    
 `
 const Input = styled.input`
     position: relative;
@@ -51,7 +49,6 @@ const Div3 = styled.div`
     border-style:solid none solid none;
     border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
-    
 `
 const Div4 = styled.div`
     width: 6%;
@@ -63,8 +60,8 @@ const Div4 = styled.div`
     border-style:solid solid solid none;
     border-color:${props =>props.val ? '#27292D' :'#BBBEC9'};
     border-width:1px;
-    
 `
+// ----- style ---- 
 function Writemessage() {
     const { Darkmode } = useContext(ThemeContext);
     const [display, setDisplay] = useState('none');
@@ -92,6 +89,11 @@ function Writemessage() {
         
     }
 
+    const send = () => {
+        socket.emit("fromapp",value);  // emitting to socket server
+        setvalue("")
+    }
+
     return (
         <Div>
             {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
@@ -108,7 +110,7 @@ function Writemessage() {
             </Div3>
             <Div4 val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox={view}><path fill="#0079FF"
-                    d={path}/></svg>
+                    d={path} onClick={send}/></svg>
             </Div4>
         </Div>
     )
