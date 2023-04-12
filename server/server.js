@@ -4,7 +4,7 @@ const http = require("http").createServer(app);
 const cors = require("cors");
 app.use(cors({}));
 const {Server} = require("socket.io");
-const { Socket } = require('dgram');
+// const { Socket } = require('dgram');
 
 http.listen(8080, () => console.log("listening on port 8080"));
 
@@ -22,7 +22,7 @@ io.on("connection",Socket=> {
         console.log("user disconnected",Socket.id);
     })
 
-    Socket.on("fromapp",(data)=>{
-        console.log("",data);
+    Socket.on("send_message",(data)=>{
+        Socket.broadcast.emit("recieve_message",data);
     })
 })

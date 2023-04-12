@@ -5,7 +5,7 @@ import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
 import io from 'socket.io-client'
 
-const socket = io.connect("http://localhost:8080")
+export const socket = io.connect("http://localhost:8080")
 
 
 // ----- Style - -- 
@@ -89,9 +89,11 @@ function Writemessage() {
         
     }
 
-    const send = () => {
-        socket.emit("fromapp",value);  // emitting to socket server
+    const sendmsg = () => {
+        if (value!= ""){
+        socket.emit("send_message",value);  // emitting to socket server
         setvalue("")
+        }
     }
 
     return (
@@ -110,7 +112,7 @@ function Writemessage() {
             </Div3>
             <Div4 val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox={view}><path fill="#0079FF"
-                    d={path} onClick={send}/></svg>
+                    d={path} onClick={sendmsg}/></svg>
             </Div4>
         </Div>
     )

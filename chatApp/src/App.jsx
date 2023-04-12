@@ -1,8 +1,6 @@
 import React,{createContext, useState} from 'react';
 import Layoutgrid from './chat_system/Layoutgrid.jsx'
 
-
-
 export const ThemeContext = createContext(null);
 
 function App() {
