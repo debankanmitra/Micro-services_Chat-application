@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components' // Need to add hover effects and some animation 
+import styled from 'styled-components' //TODO: Need to add hover effects and some animation 
 import Form from './Form';
 import Circles from './Circles';
 

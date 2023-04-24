@@ -43,7 +43,7 @@ function Layoutgrid() {
   const [disp, setDisplay] = useState(true);
   const {Darkmode} = useContext(ThemeContext);
   
-  return (
+  return ( // TODO : manage states efficiently from a single file
     
     <Div>
       <GlobalStyle val={Darkmode}/>

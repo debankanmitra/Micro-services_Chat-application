@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components' // need to make the texts responsive
+import styled from 'styled-components' //TODO: need to make the texts responsive
 
-function Formfields(props) {
 
 const Label = styled.label `
 font-weight: bold;
@@ -20,7 +19,7 @@ margin-bottom: 6%;
 `
 const Head = styled.div `
 margin-bottom: 15%;
-display: ${props.hide};
+display: ${props => props.hide};
 `
 const H2 = styled.h2 `
 font-weight: bolder;
@@ -34,9 +33,10 @@ font-weight: bold;
 font-size: 18px;
 `
 
+function Formfields(props) {
     return (
         <>
-        <Head>
+        <Head hide={props.hide}>
                 <H2>Sign Up</H2>
                 <P>Create account to start chatting</P>
         </Head>

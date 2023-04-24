@@ -3,21 +3,20 @@ import styled from 'styled-components'
 
 
 
-function Circles(props) {
-    const Circle = styled.div`
-    width: ${props.width};
-    height: ${props.height};
-    background: ${props.color};
+const Circle = styled.div`
+    width: ${props => props.width};
+    height: ${props => props.height};
+    background: ${props => props.color};
     border-radius: 50%;
     position: absolute;
-    top: ${props.top};
-    bottom: ${props.bottom};;
-    left: ${props.left};
-    right: ${props.right};
-
-`
+    top: ${props => props.top};
+    bottom: ${props => props.bottom};;
+    left: ${props => props.left};
+    right: ${props => props.right};
+    `
+function Circles(props) {
   return (
-    <Circle></Circle>
+    <Circle width={props.width} height={props.height} color={props.color} top={props.top} bottom={props.bottom} left={props.left} right={props.right}></Circle>
   )
 }
 

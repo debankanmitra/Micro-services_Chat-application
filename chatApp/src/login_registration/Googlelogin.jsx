@@ -1,5 +1,6 @@
-import React from 'react'      // Need more efficient code
+import React from 'react'      //TODO: Need more efficient code
 import styled from 'styled-components' 
+import { signInWithGoogle } from './Google-auth';
 
 
 const Button = styled.button `
@@ -16,7 +17,7 @@ border: 1px solid #E5D4D4;
 display: inline-block;
 `;
 
-const Image = styled.img `   // Need to make this part responsive
+const Image = styled.img `   //TODO: Need to make this part responsive
 position:absolute;
 width: 25px;
 height: 25px;
@@ -26,7 +27,7 @@ margin-top: -3px;
 function Googlelogin() {
    
     return (
-        <Button type="submit" className='sgnup'>
+        <Button type="submit" className='sgnup' onClick={signInWithGoogle}>
             <Image src='google.svg'/>
             Login with Google
         </Button>

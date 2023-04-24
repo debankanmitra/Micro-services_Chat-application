@@ -28,7 +28,7 @@ const Input = styled.input`
 }
 `
 
-const Svg = styled.svg`    // not efficient way try with write message technique
+const Svg = styled.svg`    // TODO: not efficient way try with write message technique
     position: relative;
     top:18px;
     margin-left: 65%; 

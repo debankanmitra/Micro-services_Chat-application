@@ -5,7 +5,9 @@ import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
 import io from 'socket.io-client'
 
-export const socket = io.connect("http://localhost:8080")
+//const url = "http://localhost:8080"
+export const socket = io.connect()
+
 
 
 // ----- Style - -- 
@@ -16,7 +18,7 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
 `
-const Div2 = styled.div`
+const Messagearea = styled.div`
     position: relative;
     width: 60%;
     height: 40px;
@@ -40,7 +42,7 @@ const Input = styled.input`
     outline: none;
 }
 `
-const Div3 = styled.div`
+const Attachicon = styled.div`
     width: 6%;
     height: 40px;
     display: grid;
@@ -50,7 +52,7 @@ const Div3 = styled.div`
     border-color:${props => props.val ? '#27292D' : '#BBBEC9'};
     border-width:1px;
 `
-const Div4 = styled.div`
+const Sendicon = styled.div`
     width: 6%;
     height: 40px;
     display: grid;
@@ -101,19 +103,19 @@ function Writemessage() {
             {/* we can also directly: () => setDisplay('block')  -- https://fireship.io/courses/react/basics-conditional-rendering/*/}
             <Emojiicon onClick={handleClick} />
             <Emoji display={display} onClick={addemojitotext} />
-            <Div2 val={Darkmode}>
+            <Messagearea val={Darkmode}>
                 <Input type="text" placeholder="Write Messages" value={value} onChange={inputchange} val={Darkmode} onKeyDown={event => event.key == 'Enter' && sendmsg()} />
-            </Div2>
+            </Messagearea>
 
-            <Div3 val={Darkmode}>
+            <Attachicon val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16"><path fill="#0079FF"
                     d="m3.258 8.707l4.596-4.596a2.5 2.5 0 0 1 3.536 3.536L6.086 12.95a1 1 0 0 1-1.414-1.414l5.303-5.304a.5.5 0 0 0-.707-.707L3.965 10.83a2 2 0 1 0 
             2.828 2.828l5.304-5.303a3.5 3.5 0 0 0-4.95-4.95L2.55 8a.5.5 0 1 0 .707.707Z"/></svg>
-            </Div3>
-            <Div4 val={Darkmode}>
+            </Attachicon>
+            <Sendicon val={Darkmode}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox={view}><path fill="#0079FF"
                     d={path} onClick={sendmsg} /></svg>
-            </Div4>
+            </Sendicon>
         </Div>
     )
 }
