@@ -40,8 +40,8 @@ let Form = () => {
                 <Formfields for="email" name='Email' type='email' hide='none' />
                 <Formfields for="password" name='Password' type='password' hide='none' />
                 <Button type="submit" className='sgnup'> SIGNUP </Button>
-            </FRorm>
                 <Googlelogin /> 
+            </FRorm>
 
         </>
         // </Div>
