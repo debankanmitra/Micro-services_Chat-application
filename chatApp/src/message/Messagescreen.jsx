@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { ThemeContext } from '../App'
 import styled from 'styled-components'
-import { socket } from './Writemessage'
+// 😃  import { socket } from './Writemessage'
 
 const Div = styled.div`
     border: 2px solid ${props => props.val ? '#121316' : '#EDF0F6'};
@@ -25,9 +25,9 @@ const P = styled.p`
 
 function Messagescreen() {
   const[messageList,setMessageList]= useState([]);
-  socket.on("recieve_message", (value) => {  // using io.emit sending messages to both the participant we can view pedrotech to apply which side the sender's message will be shown but only after the authenticaiton
-    setMessageList([...messageList, value])
-  });
+  //  😃 socket.on("recieve_message", (value) => {  // using io.emit sending messages to both the participant we can view pedrotech to apply which side the sender's message will be shown but only after the authenticaiton
+  //   setMessageList([...messageList, value])
+  // });
   const { Darkmode } = useContext(ThemeContext);
 
   return (

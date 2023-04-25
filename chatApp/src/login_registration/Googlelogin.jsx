@@ -1,6 +1,6 @@
 import React from 'react'      //TODO: Need more efficient code
 import styled from 'styled-components' 
-import { signInWithGoogle } from './Google-auth';
+import { signInWithGoogle } from './auth';
 
 
 const Button = styled.button `

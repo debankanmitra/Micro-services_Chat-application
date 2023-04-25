@@ -5,8 +5,8 @@ import Emojiicon from './Emoji'
 import { Emoji } from './Emoji'
 import io from 'socket.io-client'
 
-//const url = "http://localhost:8080"
-export const socket = io.connect()
+//  😃 const url = "http://localhost:8080"
+//  😃 export const socket = io.connect()
 
 
 
@@ -93,7 +93,7 @@ function Writemessage() {
 
     const sendmsg = () => {
         if (value != "") {
-            socket.emit("send_message", value);  // emitting to socket server
+         //  😃  socket.emit("send_message", value);  // emitting to socket server
             setvalue("")
         }
     }
