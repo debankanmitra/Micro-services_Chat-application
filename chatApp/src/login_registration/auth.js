@@ -16,6 +16,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // users currrenly athenticated in fireabse inside of our project 
 const provider = new GoogleAuthProvider();
 
+
+
 export const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
         .then(result => {
@@ -31,10 +33,10 @@ export const signInWithGoogle = () => {
             localStorage.setItem("emailVerified", result.user.emailVerified)
             console.log("", name, email, profilePic,user_id)
             console.log("storing in postgres")
-            if ("5dx6K2MKvVaJK2CAv9TDUtVLhTD3" == user_id) {
-                console.log("same id can be used in invite")
-            }
-            console.log(result)
+
+            location.reload(false) // location. reload(true); reloads the page from the server instead of from the cache vice versa in case of false 
+                                   // TODO: implement this using useeffet (react foreupdate) , we can also do it using usestate
+          
         }).catch(error => {
             console.log(error);
         });
