@@ -19,25 +19,23 @@ const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
         .then(result => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            // IdP data available using getAdditionalUserInfo(result)
-            // ...
-            console.log( user)
+            const name = result.user.displayName
+            const email = result.user.email
+            const profilePic = result.user.photoURL
+            const user_id = result.user.uid
 
+            localStorage.setItem("name", name)
+            localStorage.setItem("email", email)
+            localStorage.setItem("profilePic", profilePic)
+            localStorage.setItem("user_id", user_id)
+
+            console.log("", name, email, profilePic,user_id)
+            console.log("storing in postgres")
+            if ("5dx6K2MKvVaJK2CAv9TDUtVLhTD3" == user_id) {
+                console.log("same id can be used in invite")
+            }
         }).catch(error => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-            console.log( errorCode, errorMessage, email)
+            console.log(error);
         });
 
 }
