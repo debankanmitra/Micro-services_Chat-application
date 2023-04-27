@@ -6,7 +6,11 @@ export const ThemeContext = createContext(null);
 
 function App() {
     const [Darkmode , setdarkmode]= useState(false);
-    const isLoggedIn = false;
+    const [verified , setverified]= useState(false);
+    
+
+    const isLoggedIn = localStorage.getItem("emailVerified")
+    
     return (
 
 

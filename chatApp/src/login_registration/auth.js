@@ -28,12 +28,13 @@ export const signInWithGoogle = () => {
             localStorage.setItem("email", email)
             localStorage.setItem("profilePic", profilePic)
             localStorage.setItem("user_id", user_id)
-
+            localStorage.setItem("emailVerified", result.user.emailVerified)
             console.log("", name, email, profilePic,user_id)
             console.log("storing in postgres")
             if ("5dx6K2MKvVaJK2CAv9TDUtVLhTD3" == user_id) {
                 console.log("same id can be used in invite")
             }
+            console.log(result)
         }).catch(error => {
             console.log(error);
         });
