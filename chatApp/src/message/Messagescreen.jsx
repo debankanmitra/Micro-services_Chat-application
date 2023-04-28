@@ -12,7 +12,7 @@ const Div = styled.div`
     background: ${props => props.val ? '#121316' : '#EDF0F6'};
 `
 const P = styled.p`
-    max-width: 30%;   // see pedrotech to fix width
+    max-width: 30%;   //TODO: see pedrotech to fix width
     background-color: #f2f2f2; 
     margin: 0px 0px 0px 20px;
     border: 1px solid #6382c0;

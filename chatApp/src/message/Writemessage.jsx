@@ -66,7 +66,7 @@ const Sendicon = styled.div`
 // ----- style ---- 
 function Writemessage() {
     const { Darkmode } = useContext(ThemeContext);
-    const [display, setDisplay] = useState('none');
+    const [display, setDisplay] = useState('none'); // TODO: instead of too many use state we can use Usereducer
     const [count, setCount] = useState(0);
     const [value, setvalue] = useState('');
     const [view, setview] = useState("0 0 24 24");
