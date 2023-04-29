@@ -1,5 +1,7 @@
 we will start our codes from route 
 
+route -> config 
+
 routes , utils , config , app , main files will be very small
 
 main.go file will just tell golang where my routes are
