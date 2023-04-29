@@ -4,9 +4,6 @@ const http = require("http").createServer(app);
 const cors = require("cors");
 app.use(cors({}));
 const {Server} = require("socket.io");
-// const { Socket } = require('dgram');
-
-http.listen(8080, () => console.log("listening on port 8080"));
 
 const io = new Server(http,{
     cors:{
@@ -30,9 +27,10 @@ io.on("connection",Socket=> {
 })
 
 
+http.listen(8080, () => console.log("listening on port 8080"));
 
-
-
+// TODO: implement concurrency and parallelism 
+// TODO: implement web socket using melody or golang.org/x/net
 
 
 
