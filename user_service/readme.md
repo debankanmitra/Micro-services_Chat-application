@@ -1,6 +1,6 @@
 we will start our codes from route 
 
-route -> config 
+route -> config -> utils -> models
 
 routes , utils , config , app , main files will be very small
 

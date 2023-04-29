@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react'
 import styled from 'styled-components'
-import Conversation from '../Conversations/Conversations'
+import Conversation from '../Connections/Connections'
 import Searchlist from './Searchlist'
 import Messagescreen from '../message/Messagescreen'
 import Top from '../Top/Top.jsx'
