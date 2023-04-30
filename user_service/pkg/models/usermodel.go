@@ -25,3 +25,20 @@ func init() {
 	database = config.GetDB()
 	database.AutoMigrate(&User{})
 }
+
+// CRUD functions of database
+
+func Create(user *User) *User {
+	database.Create(&user)
+	return user
+}
+
+func Read(uid string) (*User, *gorm.DB) {
+	var user *User
+	database := database.Find(&user, "Uuid = ?", uid)
+	return user, database
+}
+
+func Delete(user *User, uid string) {
+	database.Where("Uuid = ?", uid).Delete(&user)
+}
