@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
 
 	"msql/model"
 
@@ -15,8 +14,8 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-Type", "application/x-www-form-urlencode")
 	w.Header().Set("Allow-Control-Allow-Methods", "GET")
 	params := mux.Vars(r)
-	ID, _ := strconv.Atoi(params["id"])
-	userdetail := model.Read(ID)
+	//ID, _ := strconv.Atoi(params["id"])
+	userdetail := model.Read(params["id"])
 
 	// throwing json values
 	json.NewEncoder(w).Encode(userdetail)
@@ -38,9 +37,9 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Allow-Control-Allow-Methods", "DELETE")
 
 	params := mux.Vars(r)
-	ID, _ := strconv.Atoi(params["id"])
+	//, _ := strconv.Atoi(params["id"])
 
-	model.Delete(ID)
+	model.Delete(params["id"])
 	fmt.Println("user DELETED")
 }
 
@@ -50,9 +49,9 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Allow-Control-Allow-Methods", "PUT")
 
 	params := mux.Vars(r)
-	ID, _ := strconv.Atoi(params["id"])
+	//ID, _ := strconv.Atoi(params["id"])
 
-	model.Delete(ID)
+	model.Delete(params["id"])
 
 	var user model.User
 	json.NewDecoder(r.Body).Decode(&user)

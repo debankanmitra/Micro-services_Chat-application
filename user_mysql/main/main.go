@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -17,6 +18,7 @@ func main() {
 	router.HandleFunc("/api/user/{id}", controller.DeleteUser).Methods("DELETE")
 	router.HandleFunc("/api/user/{id}", controller.UpdateUser).Methods("PUT")
 
+	handler := cors.Default().Handler(router)
 	fmt.Println("SERVER IS STARTED")
-	log.Fatal(http.ListenAndServe(":4000", router))
+	log.Fatal(http.ListenAndServe(":4001", handler))
 }

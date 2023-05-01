@@ -12,10 +12,13 @@ var (
 
 // User represents a database table containing user data.
 type User struct {
-	ID    uint   `gorm:"primaryKey"`
-	Name  string `gorm:"" json:"Name"`
-	Age   int
-	Email string `gorm:"unique;not null" json:"Email"`
+	ID            uint   `gorm:"primaryKey"`
+	Uuid          string `gorm:"not null" json:"Uuid"`
+	Name          string `gorm:"" json:"Name"`
+	ProfilePic    string
+	Email         string `gorm:"unique;not null" json:"Email"`
+	EmailVerified bool   `gorm:"not null" json:"EmailVerified"`
+	DarkMode      bool   `gorm:"not null" json:"DarkMode"`
 }
 
 func init() {
@@ -29,11 +32,11 @@ func init() {
 
 // CRUD functions of database
 // Read retrieves a single User by ID from the database.
-func Read(id int) *User {
+func Read(id string) *User {
 	// db.Find() will return the results of the query, which in this case is a pointer to the User struct
 	// &user is a pointer to the User struct that will hold the results of the query
 	var user *User
-	database.Find(&user, "id= ?", id)
+	database.Find(&user, "Uuid= ?", id)
 	return user
 }
 
@@ -42,8 +45,8 @@ func Create(user *User) *User {
 	return user
 }
 
-func Delete(id int) *User {
+func Delete(id string) *User {
 	var user *User
-	database.Where("id= ?", id).Delete(&user)
+	database.Where("Uuid= ?", id).Delete(&user)
 	return user
 }
