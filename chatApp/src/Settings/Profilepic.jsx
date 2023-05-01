@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { getData } from "../api";
 
 const img = localStorage.getItem("profilePic");
-console.log(img);
+const id = localStorage.getItem("Uuid");
 const Div = styled.div`
     width: 99%;
     display: grid;
@@ -25,9 +26,11 @@ const H = styled.h1`
 `;
 
 function Profilepic() {
+  const data = getData(id);
+  localStorage.setItem("profilePic", data?.ProfilePic);
   return <Div>
     <Div1 img={img}/>
-    <H>{localStorage.getItem("name")}</H>
+    <H>{data?.Name}</H>
   </Div>;
 }
 

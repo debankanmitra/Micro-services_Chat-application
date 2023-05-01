@@ -21,22 +21,36 @@ const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
         .then(result => {
-            const name = result.user.displayName
-            const email = result.user.email
-            const profilePic = result.user.photoURL
-            const user_id = result.user.uid
+            const Uuid = result.user.uid
+            const EmailVerified = result.user.emailVerified
+            const Name = result.user.displayName
+            const Email = result.user.email
+            const ProfilePic = result.user.photoURL
+            const DarkMode = false
 
-            localStorage.setItem("name", name)
-            localStorage.setItem("email", email)
-            localStorage.setItem("profilePic", profilePic)
-            localStorage.setItem("user_id", user_id)
+            let data = { Uuid, Name, ProfilePic, Email, EmailVerified, DarkMode }
+            fetch('http://localhost:4001/api/crtuser', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+                
+            localStorage.setItem("Uuid", Uuid)
             localStorage.setItem("emailVerified", result.user.emailVerified)
-            
-            console.log(result)
 
-            //location.reload(false) // location. reload(true); reloads the page from the server instead of from the cache vice versa in case of false 
-                                   // TODO: implement this using useeffet (react foreupdate) , we can also do it using usestate
-          
+            location.reload(false) // location. reload(true); reloads the page from the server instead of from the cache vice versa in case of false 
+            // TODO: implement this using useeffet (react foreupdate) , we can also do it using usestate
+
         }).catch(error => {
             console.log(error);
         });
