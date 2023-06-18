@@ -28,7 +28,7 @@ export const signInWithGoogle = () => {
             const ProfilePic = result.user.photoURL
             const DarkMode = false
 
-            let data = { Uuid, Name, ProfilePic, Email, EmailVerified, DarkMode }
+            let data = { Uuid, Name, ProfilePic, Email }
             fetch('http://localhost:4001/api/crtuser', {
                 method: 'POST',
                 headers: {
@@ -47,6 +47,11 @@ export const signInWithGoogle = () => {
                 
             localStorage.setItem("Uuid", Uuid)
             localStorage.setItem("emailVerified", result.user.emailVerified)
+            localStorage.setItem("ProfilePic", ProfilePic)
+            localStorage.setItem("Name", Name)
+            localStorage.setItem("DarkMode", DarkMode)
+            
+
 
             location.reload(false) // location. reload(true); reloads the page from the server instead of from the cache vice versa in case of false 
             // TODO: implement this using useeffet (react foreupdate) , we can also do it using usestate

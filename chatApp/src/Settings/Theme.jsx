@@ -8,6 +8,7 @@ function Theme() {
     return <div className="wrapper" onClick={
         () => { 
         setdarkmode(!Darkmode); 
+        localStorage.setItem("DarkMode",Darkmode);
         if (Darkmode==true) setText("Dark Mode") ;
         else setText("Light Mode") ;
         }

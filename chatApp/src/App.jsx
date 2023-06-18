@@ -5,7 +5,7 @@ import Registrationpage from './login_registration/Registrationpage.jsx';
 export const ThemeContext = createContext(null);
 
 function App() {
-    const [Darkmode , setdarkmode]= useState(false);
+    const [Darkmode , setdarkmode]= useState(localStorage.getItem("DarkMode"));
 
     const isLoggedIn = localStorage.getItem("emailVerified")
     

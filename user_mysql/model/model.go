@@ -12,13 +12,13 @@ var (
 
 // User represents a database table containing user data.
 type User struct {
-	ID            uint   `gorm:"primaryKey"`
-	Uuid          string `gorm:"not null" json:"Uuid"`
-	Name          string `gorm:"" json:"Name"`
-	ProfilePic    string
-	Email         string `gorm:"unique;not null" json:"Email"`
-	EmailVerified bool   `gorm:"not null" json:"EmailVerified"`
-	DarkMode      bool   `gorm:"not null" json:"DarkMode"`
+	ID         uint   `gorm:"primaryKey"`
+	Uuid       string `gorm:"not null" json:"Uuid"`
+	Name       string `gorm:"" json:"Name"`
+	ProfilePic string
+	Email      string `gorm:"unique;not null" json:"Email"`
+	// EmailVerified bool   `gorm:"not null" json:"EmailVerified"`
+	// DarkMode      bool   `gorm:"not null" json:"DarkMode"`
 }
 
 func init() {
