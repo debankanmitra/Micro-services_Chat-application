@@ -51,11 +51,30 @@ const Button = styled.button`
 `;
 
 function Adddiv(props) {
-    let code = "JK56LMP0S"
+    const handleClick = (e) => {
+      let friend = e.target.value
+      let Uuid = localStorage.getItem("Uuid")
+      let data = { Uuid,friend }
+            fetch('http://localhost:4000/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+    }
     return( 
     <Div dis={props.show}>
          <Input type="text" placeholder="Paste your code" />
-         <Button type="submit">Add</Button>
+         <Button type="submit" onClick={handleClick}>Add</Button>
     </Div>
 )}
 
