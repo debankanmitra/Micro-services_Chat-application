@@ -21,6 +21,7 @@ import (
 func AddConnection(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-Type", "application/x-www-form-urlencode")
 	w.Header().Set("Allow-Control-Allow-Methods", "POST")
+
 	var user model.Addpeoples
 	json.NewDecoder(r.Body).Decode(&user)
 	model.Create(&user)

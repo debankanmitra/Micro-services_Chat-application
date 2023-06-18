@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import './settings.css'
 import styled from "styled-components";
 
@@ -51,10 +51,17 @@ const Button = styled.button`
 `;
 
 function Adddiv(props) {
+  const [inputValue, setInputValue] = useState('');
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
     const handleClick = (e) => {
-      let friend = e.target.value
-      let Uuid = localStorage.getItem("Uuid")
-      let data = { Uuid,friend }
+      e.preventDefault();
+      
+      let Userid = localStorage.getItem("Uuid")
+      let Friendid = inputValue
+      console.log(Userid,Friendid)
+      let data = { Userid,Friendid }
             fetch('http://localhost:4000/api/add', {
                 method: 'POST',
                 headers: {
@@ -73,7 +80,7 @@ function Adddiv(props) {
     }
     return( 
     <Div dis={props.show}>
-         <Input type="text" placeholder="Paste your code" />
+         <Input type="text" placeholder="Paste your code" onChange={handleChange} />
          <Button type="submit" onClick={handleClick}>Add</Button>
     </Div>
 )}
