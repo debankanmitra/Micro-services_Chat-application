@@ -60,8 +60,9 @@ function Adddiv(props) {
       
       let Userid = localStorage.getItem("Uuid")
       let Friendid = inputValue
-      console.log(Userid,Friendid)
-      let data = { Userid,Friendid }
+      let Chatid = Userid+Friendid
+      console.log(Userid,Friendid,Chatid)
+      let data = { Userid,Friendid,Chatid }
             fetch('http://localhost:4000/api/add', {
                 method: 'POST',
                 headers: {

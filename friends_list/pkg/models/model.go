@@ -14,6 +14,7 @@ type Addpeoples struct {
 	ID       uint   `gorm:"primaryKey"`
 	Userid   string `gorm:"not null" json:"Userid"`
 	Friendid string `gorm:"not null" json:"Friendid"`
+	Chatid   string `gorm:"not null" json:"Chatid"`
 }
 
 type User struct {
