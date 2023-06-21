@@ -58,11 +58,11 @@ function Adddiv(props) {
     const handleClick = (e) => {
       e.preventDefault();
       
-      let Userid = localStorage.getItem("Uuid")
+      let Pid = localStorage.getItem("Uuid")
       let Friendid = inputValue
-      let Chatid = Userid+Friendid
-      console.log(Userid,Friendid,Chatid)
-      let data = { Userid,Friendid,Chatid }
+      let Chatid = Pid+Friendid
+      console.log(Pid,Friendid,Chatid)
+      let data = { Pid,Friendid,Chatid }
             fetch('http://localhost:4000/api/add', {
                 method: 'POST',
                 headers: {

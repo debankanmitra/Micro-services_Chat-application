@@ -25,10 +25,10 @@ export const signInWithGoogle = () => {
             const EmailVerified = result.user.emailVerified
             const Name = result.user.displayName
             const Email = result.user.email
-            const ProfilePic = result.user.photoURL
+            const Pic = result.user.photoURL
             const DarkMode = false
 
-            let data = { Uuid, Name, ProfilePic, Email }
+            let data = { Uuid, Name, Pic, Email }
             fetch('http://localhost:4001/api/crtuser', {
                 method: 'POST',
                 headers: {
@@ -47,7 +47,7 @@ export const signInWithGoogle = () => {
                 
             localStorage.setItem("Uuid", Uuid)
             localStorage.setItem("emailVerified", result.user.emailVerified)
-            localStorage.setItem("ProfilePic", ProfilePic)
+            localStorage.setItem("ProfilePic", Pic)
             localStorage.setItem("Name", Name)
             localStorage.setItem("DarkMode", DarkMode)
             

@@ -12,11 +12,11 @@ var (
 
 // User represents a database table containing user data.
 type User struct {
-	ID         uint   `gorm:"primaryKey"`
-	Uuid       string `gorm:"not null" json:"Uuid"`
-	Name       string `gorm:"" json:"Name"`
-	ProfilePic string
-	Email      string `gorm:"unique;not null" json:"Email"`
+	ID    uint   `gorm:"primaryKey"`
+	Uuid  string `gorm:"not null" json:"Uuid"`
+	Name  string `gorm:"" json:"Name"`
+	Pic   string
+	Email string `gorm:"unique;not null" json:"Email"`
 	// EmailVerified bool   `gorm:"not null" json:"EmailVerified"`
 	// DarkMode      bool   `gorm:"not null" json:"DarkMode"`
 }
@@ -27,7 +27,7 @@ func init() {
 
 	// automatically creates or updates database tables based on the Go structs defined in the code.
 	// When you call the AutoMigrate function, GORM inspects the struct fields and generates the corresponding database table schema.
-	database.AutoMigrate(&User{})
+	//database.AutoMigrate(&User{})
 }
 
 // CRUD functions of database
