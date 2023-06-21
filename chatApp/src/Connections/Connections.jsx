@@ -26,19 +26,7 @@ let people = [
   { name: "Zoe", age: 40 }
 ];
 
-let API = 'http://localhost:4000/api/connections/vcp6Gs2xCtX27uEGiP4fCiTGH3M2'
 
-const[showData,setData]= useState('');
-
-const fetchApiData = async (url) =>  {
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    setData(data);
-  } catch (error) {
-    console.log(error)
-  }
-}
 
 
 
@@ -52,13 +40,27 @@ const Div = styled.div `
 `
 
 function Conversation() {
+const[showData,setData]= useState([]);
+let API = 'http://localhost:4000/api/connections/vcp6Gs2xCtX27uEGiP4fCiTGH3M2'
+const fetchApiData = async (url) =>  {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    setData(data);
+    console.log(showData)
+  } catch (error) {
+    console.log(error)
+  }
+}
   useEffect(() => {
     fetchApiData(API);
   },[])
-  let items = people.map((prop, index) => <Person key={index} name={prop.name} age={prop.age}/>);
+  let items = showData.map((user,id) => (<Person key={id} name={user.Name} age={user.Friendid}/>));
+  console.log(showData)
   return (
     <Div>
-      {items}
+      {/* {showData.map((user,id) => (<div key={id}>{user.Name}</div>))} */}
+      {showData.map((user,id) => (<Person key={id} name={user.Name} img={user.Pic}/>))}
     </Div>
   )
 }

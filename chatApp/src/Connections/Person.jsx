@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-const img = localStorage.getItem("ProfilePic");
+//const img = localStorage.getItem("ProfilePic");
 const Div = styled.div`
     border: 1px solid red;
     border-radius: 20px;
@@ -16,16 +16,16 @@ const Div1 = styled.div`
     height: 50px;
     border-radius: 75px;
     margin-top: 10px;
-    background-image: url("${img}");
+    background-image: url("${props => props.img}");
     background-size: cover;
     background-position: center; 
 `
 ;
 
-function Person({name , age}) {
+function Person({name , img}) {
   return <Div>
     <Div1 img={img}/>
-    <p>DEV</p>
+    <p>{name}</p>
   </Div>;
 }
 
