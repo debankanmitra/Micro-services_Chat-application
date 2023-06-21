@@ -6,17 +6,18 @@ import (
 	"net/http"
 
 	model "userservice/pkg/models"
-	//"github.com/gorilla/mux"
+
+	"github.com/gorilla/mux"
 )
 
-// func GetConnections(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("content-Type", "application/x-www-form-urlencode")
-// 	w.Header().Set("Allow-Control-Allow-Methods", "GET")
-// 	//params := mux.Vars(r)
-// 	userdetail := model.Read()
-// 	json.NewEncoder(w).Encode(userdetail)
+func GetConnections(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Allow-Control-Allow-Methods", "GET")
+	params := mux.Vars(r)
+	userdetail := model.Read(params["id"])
+	json.NewEncoder(w).Encode(userdetail)
 
-// }
+}
 
 func AddConnection(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-Type", "application/x-www-form-urlencode")

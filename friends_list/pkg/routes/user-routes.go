@@ -9,7 +9,7 @@ import (
 var Route = func() *mux.Router {
 	router := mux.NewRouter()
 
-	//router.HandleFunc("/api/connections", controller.GetConnections).Methods("GET")
+	router.HandleFunc("/api/connections/{id}", controller.GetConnections).Methods("GET")
 	router.HandleFunc("/api/add", controller.AddConnection).Methods("POST")
 	//router.HandleFunc("/api/connections/{id}", controller.DeleteConnection).Methods("DELETE")
 
