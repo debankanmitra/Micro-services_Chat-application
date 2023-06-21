@@ -52,17 +52,21 @@ This would result in you only getting the first row of data and losing the rest.
 func Read(Userid string) []Friends {
 
 	var friends []Friends
-	database.Find(&friends, "Userid = ?", Userid)
+	//database.Find(&friends, "Userid = ?", Userid)
+	database.Table("users").
+		Select("users.uuid,addpeoples.Friendid,users.name,users.Pic,addpeoples.Pid,addpeoples.Chatid").
+		Joins("join addpeoples on addpeoples.Friendid = users.uuid AND addpeoples.Pid = ?", Userid).
+		Scan(&friends)
 	return friends
 }
 
-func Create(user *Addpeoples) *Friends { // it will be create bcuz we will be actually saving creating
+func Create(user *Addpeoples) *Addpeoples { // it will be create bcuz we will be actually saving creating
 	database.Create(user)
-	var friends *Friends
-	database.Table("users").Select("users.uuid,addpeoples.Friendid,users.name,users.Pic,addpeoples.Pid").Joins("join addpeoples on addpeoples.Friendid = users.uuid").Scan(&friends)
+	//var friends *Friends
+	//database.Table("users").Select("users.uuid,addpeoples.Friendid,users.name,users.Pic,addpeoples.Pid").Joins("join addpeoples on addpeoples.Friendid = users.uuid").Scan(&friends)
 
-	database.Create(friends)
-	return friends
+	//database.Create(friends)
+	return user
 }
 
 // func Delete(id string) *Friends { // this is fine too
