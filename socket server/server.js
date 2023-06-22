@@ -15,12 +15,17 @@ const io = new Server(http,{
 io.on("connection",Socket=> {
     console.log("client connected",Socket.id);
 
+    Socket.on("join_room",(data)=> Socket.join(data));
+
     Socket.on('disconnect',()=>{
         console.log("user disconnected",Socket.id);
     })
 
     Socket.on("send_message",(data)=>{
-        io.emit("recieve_message",data);
+        //console.log("",data.value)
+        //console.log("",data.room)
+        //Socket.join(data.room)
+       Socket.to(data.room).emit("recieve_message",data.value);
         //Socket.emit("recieve_message",data);
        // Socket.broadcast.emit("recieve_message",data);
     })

@@ -60,7 +60,7 @@ const fetchApiData = async (url) =>  {
   return (
     <Div>
       {/* {showData.map((user,id) => (<div key={id}>{user.Name}</div>))} */}
-      {showData && showData.map((user,id) => (<Person key={id} name={user.Name} img={user.Pic}/>))}
+      {showData && showData.map((user,id) => (<Person key={id} name={user.Name} img={user.Pic} chat_id={user.Chatid}/>))}
     </Div>
   )
 }

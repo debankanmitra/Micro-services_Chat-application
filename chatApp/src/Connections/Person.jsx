@@ -1,5 +1,6 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import styled from "styled-components";
+import { socket } from '../message/Writemessage'
 
 
 //const img = localStorage.getItem("ProfilePic");
@@ -22,11 +23,21 @@ const Div1 = styled.div`
 `
 ;
 
-function Person({name , img}) {
+function Person({name , img, chat_id}) {
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    const storedValue = localStorage.getItem('key');
+    if (storedValue) {
+      setValue(storedValue);
+    }
+  }, []);
 
   const getchat = () => {
-    console.log("name :" ,name);
-  }
+    setValue(chat_id);
+    localStorage.setItem('key', chat_id);
+    socket.emit("join_room", chat_id);
+  };
 
   return <Div onClick={getchat}>
     <Div1 img={img}/>

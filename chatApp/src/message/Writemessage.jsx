@@ -92,8 +92,9 @@ function Writemessage() {
     }
 
     const sendmsg = () => {
+        let room = localStorage.getItem("key");
         if (value != "") {
-            socket.emit("send_message", value);  // emitting to socket server
+            socket.emit("send_message", {value,room});  // emitting to socket server
             setvalue("")
         }
     }
