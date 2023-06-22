@@ -78,7 +78,34 @@ function Adddiv(props) {
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+
+        Friendid=Pid
+        Pid = inputValue
+       //Friendid = localStorage.getItem("Uuid")
+       Chatid = Friendid+Pid 
+      let data2 = { Pid,Friendid,Chatid }   
+       fetch('http://localhost:4000/api/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data2)
+            })
+                .then(response => response.json())
+                .then(data2 => {
+                    console.log('Success:', data2);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+      
     }
+
+      
+
+
+
     return( 
     <Div dis={props.show}>
          <Input type="text" placeholder="Paste your code" onChange={handleChange} />

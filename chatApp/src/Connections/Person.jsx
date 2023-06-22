@@ -23,7 +23,12 @@ const Div1 = styled.div`
 ;
 
 function Person({name , img}) {
-  return <Div>
+
+  const getchat = () => {
+    console.log("name :" ,name);
+  }
+
+  return <Div onClick={getchat}>
     <Div1 img={img}/>
     <p>{name}</p>
   </Div>;

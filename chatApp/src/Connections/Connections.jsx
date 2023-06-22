@@ -41,13 +41,13 @@ const Div = styled.div `
 
 function Conversation() {
 const[showData,setData]= useState([]);
-let API = 'http://localhost:4000/api/connections/vcp6Gs2xCtX27uEGiP4fCiTGH3M2'
+let id = localStorage.getItem("Uuid");
+let API = `http://localhost:4000/api/connections/${id}`
 const fetchApiData = async (url) =>  {
   try {
     const res = await fetch(url);
     const data = await res.json();
     setData(data);
-    console.log(showData)
   } catch (error) {
     console.log(error)
   }
@@ -55,12 +55,12 @@ const fetchApiData = async (url) =>  {
   useEffect(() => {
     fetchApiData(API);
   },[])
-  let items = showData.map((user,id) => (<Person key={id} name={user.Name} age={user.Friendid}/>));
-  console.log(showData)
+  //let items = showData.map((user,id) => (<Person key={id} name={user.Name} age={user.Friendid}/>));
+  //console.log(showData)
   return (
     <Div>
       {/* {showData.map((user,id) => (<div key={id}>{user.Name}</div>))} */}
-      {showData.map((user,id) => (<Person key={id} name={user.Name} img={user.Pic}/>))}
+      {showData && showData.map((user,id) => (<Person key={id} name={user.Name} img={user.Pic}/>))}
     </Div>
   )
 }
