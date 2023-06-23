@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import styled from "styled-components";
 import { socket } from '../message/Writemessage'
+//import { fetc } from "../message/Messagescreen";
+
 
 
 //const img = localStorage.getItem("ProfilePic");
@@ -37,6 +39,7 @@ function Person({name , img, chat_id}) {
     setValue(chat_id);
     localStorage.setItem('key', chat_id);
     socket.emit("join_room", chat_id);
+    //fetc()
   };
 
   return <Div onClick={getchat}>

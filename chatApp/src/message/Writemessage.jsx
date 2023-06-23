@@ -92,9 +92,11 @@ function Writemessage() {
     }
 
     const sendmsg = () => {
-        let room = localStorage.getItem("key");
+        let chat_id = localStorage.getItem("key");
+        let sender = localStorage.getItem("Uuid");
         if (value != "") {
-            socket.emit("send_message", {value,room});  // emitting to socket server
+            socket.emit("send_message", {value, chat_id , sender});  // emitting to socket server
+            //props.setMessageList(value)
             setvalue("")
         }
     }
