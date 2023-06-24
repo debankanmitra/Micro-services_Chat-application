@@ -5,7 +5,7 @@ const cors = require("cors");
 app.use(cors({}));
 const { Server } = require("socket.io");
 const { MongoClient} = require("mongodb");
-const uri = "mongodb+srv://debankanmitra:qulanVSXK8V76HzR@cluster0.ducoyoi.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://user:pass@cluster0.ducoyoi.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 const io = new Server(http, {

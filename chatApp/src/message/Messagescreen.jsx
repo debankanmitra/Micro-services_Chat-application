@@ -2,7 +2,9 @@ import React, {useEffect, useContext, useState } from 'react'
 import { ThemeContext } from '../App'
 import styled from 'styled-components'
 import { socket } from './Writemessage'
+import Person from '../Connections/Person'
 //import Writemessage from './Writemessage'
+
 
 const Div = styled.div`
     border: 2px solid ${props => props.val ? '#121316' : '#EDF0F6'};
@@ -23,9 +25,7 @@ const P = styled.p`
     overflow-wrap: break-word; /* Use the break-word value to break the text if it exceeds the box width */
 
 `
-function fetc(){
-  fetcd()
-}
+
 function Messagescreen() {
 
   const [messageList, setMessageList] = useState([]);
@@ -34,8 +34,8 @@ function Messagescreen() {
   });
   const { Darkmode } = useContext(ThemeContext);
 
-//function fetcd(){
-
+function fetc(){
+    console.log("clicked")
     let id = localStorage.getItem("key");
     let API = `http://localhost:8080/api/messages/${id}`;
 
@@ -54,15 +54,18 @@ function Messagescreen() {
       fetchApiData(API);
     }, []);
 
- // }
+ }
   
   
   
   
   return (
+    <>
+    < Person onClick={fetc}/>
     <Div val={Darkmode}>
       {messageList && messageList.map((message, index) => (<P key={index}>{message}</P>))}
     </Div>
+    </>
   )
 }
 

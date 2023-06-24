@@ -25,7 +25,7 @@ const Div1 = styled.div`
 `
 ;
 
-function Person({name , img, chat_id}) {
+function Person({name , img, chat_id},props) {
   const [value, setValue] = useState('');
 
   useEffect(() => {
@@ -39,11 +39,12 @@ function Person({name , img, chat_id}) {
     setValue(chat_id);
     localStorage.setItem('key', chat_id);
     socket.emit("join_room", chat_id);
-    //fetc()
+    //console.log(props.onClick)
+    
   };
 
-  return <Div onClick={getchat}>
-    <Div1 img={img}/>
+  return <Div onClick={getchat} >
+    <Div1 img={img} onClick={props.onClick}/>
     <p>{name}</p>
   </Div>;
 }
