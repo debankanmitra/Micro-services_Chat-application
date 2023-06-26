@@ -17,7 +17,7 @@ const io = new Server(http, {
 
 io.on("connection", Socket => {
     console.log("client connected", Socket.id);
-    Socket.on("join_room", (data) => Socket.join(data));
+    Socket.on("join_room", (data) => {Socket.join(data);console.log("joining",data)});
     Socket.on('disconnect', () => console.log("user disconnected", Socket.id))
     Socket.on("send_message", (data) => {
         console.log("THE DATA IS :", data)

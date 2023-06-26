@@ -2,8 +2,8 @@ import React, {useEffect, useContext, useState } from 'react'
 import { ThemeContext } from '../App'
 import styled from 'styled-components'
 import { socket } from './Writemessage'
-import Person from '../Connections/Person'
-//import Writemessage from './Writemessage'
+
+
 
 
 const Div = styled.div`
@@ -29,41 +29,49 @@ const P = styled.p`
 function Messagescreen() {
 
   const [messageList, setMessageList] = useState([]);
-  socket.on("recieve_message", (value) => {  // using io.emit sending messages to both the participant we can view pedrotech to apply which side the sender's message will be shown but only after the authenticaiton
-    setMessageList([...messageList, value.value])
-  });
+  const[showData,setData]= useState([]);
   const { Darkmode } = useContext(ThemeContext);
+  
+  socket.on("recieve_message", (value) => {  // using io.emit sending messages to both the participant we can view pedrotech to apply which side the sender's message will be shown but only after the authenticaiton
+    //setData([...showData,value.value])
+    setData([...showData,{_id: '', value: value.value, sender: ''}])
+    console.log("receive message", value)
+    console.log("show data", showData)
+    //setMessageList([...messageList,value])
 
-function fetc(){
-    console.log("clicked")
-    let id = localStorage.getItem("key");
-    let API = `http://localhost:8080/api/messages/${id}`;
+  });
+
+  let id = localStorage.getItem("key");
+  let API = `http://localhost:8080/api/messages/${id}`;
+
 
     const fetchApiData = async (url) => {
       try{
         const res = await fetch(url);
         const data = await res.json();
         console.log(data)
-        setMessageList(data.value);
+        setData(data);
+        //console.log("mesage list is ",showData)
       }catch (error) {
         console.log(error)
+        //setData([]);
       }
     }
 
-    useEffect(() => {
-      fetchApiData(API);
-    }, []);
+    
 
- }
+
   
-  
-  
+ useEffect(() => {
+  fetchApiData(API);
+}, [API]);
   
   return (
     <>
-    < Person onClick={fetc}/>
+    
     <Div val={Darkmode}>
-      {messageList && messageList.map((message, index) => (<P key={index}>{message}</P>))}
+      {/* {messageList && messageList.map((message, index) => (<P key={index}>{message}</P>))} */}
+      {showData && showData.map((message, index) => (<P key={index}>{message.value}</P>))}
     </Div>
     </>
   )

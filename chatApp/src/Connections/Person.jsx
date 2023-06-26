@@ -25,28 +25,35 @@ const Div1 = styled.div`
 `
 ;
 
-function Person({name , img, chat_id},props) {
+function Person({name , img, chat_id}) {
   const [value, setValue] = useState('');
-
-  useEffect(() => {
-    const storedValue = localStorage.getItem('key');
-    if (storedValue) {
-      setValue(storedValue);
-    }
-  }, []);
+// this commented was live
+  // useEffect(() => {
+  //   const storedValue = localStorage.getItem('key');
+  //   if (storedValue) {
+  //     setValue(storedValue);
+  //   }
+  // }, []);
 
   const getchat = () => {
     setValue(chat_id);
     localStorage.setItem('key', chat_id);
     socket.emit("join_room", chat_id);
-    //console.log(props.onClick)
+    window.location.reload();
+    //window.history.pushState(null, '', '#')
+    //this.forceUpdate();
+    
     
   };
 
-  return <Div onClick={getchat} >
-    <Div1 img={img} onClick={props.onClick}/>
+  return (
+   
+    <Div onClick={getchat}>
+    <Div1 img={img} />
     <p>{name}</p>
-  </Div>;
+  </Div>
+
+  )
 }
 
 export default Person;
